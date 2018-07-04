@@ -12,18 +12,12 @@ services:
 
   fluentd:
     build: ./fluentd
-    volumes:
-      - ./fluentd/conf:/fluentd/etc
     ports:
       - "24224:24224"
       - "24224:24224/udp"
 
   elasticsearch:
     image: elasticsearch
-    expose:
-      - 9200
-    ports:
-      - "9200:9200"
 
   kibana:
     image: kibana
